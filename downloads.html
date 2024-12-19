@@ -110,32 +110,70 @@
     </nav>
 
     <div class="container">
+        <!-- Mod 1 -->
         <div class="download-item">
-            <h3>Mod 1</h3>
-            <p>Description for Mod 1</p>
+            <h3>Wood Trailer</h3>
+            <p>Wood trailer useful for quads and small machinery.</p>
 
             <!-- Slideshow for Mod 1 -->
-            <div class="slideshow-container">
-                <img class="slideshow-images" src="https://via.placeholder.com/350x200?text=Image+1" alt="Image 1">
-                <img class="slideshow-images" src="https://via.placeholder.com/350x200?text=Image+2" alt="Image 2">
-                <img class="slideshow-images" src="https://via.placeholder.com/350x200?text=Image+3" alt="Image 3">
+            <div class="slideshow-container" id="mod1">
+                <img class="slideshow-images" src="https://www.kingmods.net/uploads/fs22/mods/wood-trailer-fs22-6bp53.jpg" alt="Image 1">
+                <img class="slideshow-images" src="https://www.kingmods.net/uploads/fs22/mods/wood-trailer-fs22-Vln66.jpg" alt="Image 2">
+                <img class="slideshow-images" src="https://cdn.discordapp.com/attachments/1285595389822636053/1319323929977950279/Wood_Trailer.png?ex=67658ba8&is=67643a28&hm=7e0c432a118220ccfce9ae1e95a45fffa0349cc87ed409edbeb196f8b5d5668d&" alt="Image 3">
             </div>
 
-            <a href="#">Download</a>
+            <!-- Download link for Mod 1 -->
+            <a href="https://sharemods.com/46why146ga1n/FS22_Wood_Trailer.zip.html" target="_blank">Download Mod 1</a>
         </div>
+
+        <!-- Mod 2 -->
         <div class="download-item">
             <h3>Mod 2</h3>
             <p>Description for Mod 2</p>
 
             <!-- Slideshow for Mod 2 -->
-            <div class="slideshow-container">
+            <div class="slideshow-container" id="mod2">
                 <img class="slideshow-images" src="https://via.placeholder.com/350x200?text=Image+4" alt="Image 4">
                 <img class="slideshow-images" src="https://via.placeholder.com/350x200?text=Image+5" alt="Image 5">
                 <img class="slideshow-images" src="https://via.placeholder.com/350x200?text=Image+6" alt="Image 6">
             </div>
 
-            <a href="#">Download</a>
+            <!-- Download link for Mod 2 -->
+            <a href="https://link-to-your-mod-2.com" target="_blank">Download Mod 2</a>
         </div>
+
+        <!-- Mod 3 -->
+        <div class="download-item">
+            <h3>Mod 3</h3>
+            <p>Description for Mod 3</p>
+
+            <!-- Slideshow for Mod 3 -->
+            <div class="slideshow-container" id="mod3">
+                <img class="slideshow-images" src="https://via.placeholder.com/350x200?text=Image+7" alt="Image 7">
+                <img class="slideshow-images" src="https://via.placeholder.com/350x200?text=Image+8" alt="Image 8">
+                <img class="slideshow-images" src="https://via.placeholder.com/350x200?text=Image+9" alt="Image 9">
+            </div>
+
+            <!-- Download link for Mod 3 -->
+            <a href="https://link-to-your-mod-3.com" target="_blank">Download Mod 3</a>
+        </div>
+
+        <!-- Mod 4 -->
+        <div class="download-item">
+            <h3>Mod 4</h3>
+            <p>Description for Mod 4</p>
+
+            <!-- Slideshow for Mod 4 -->
+            <div class="slideshow-container" id="mod4">
+                <img class="slideshow-images" src="https://via.placeholder.com/350x200?text=Image+10" alt="Image 10">
+                <img class="slideshow-images" src="https://via.placeholder.com/350x200?text=Image+11" alt="Image 11">
+                <img class="slideshow-images" src="https://via.placeholder.com/350x200?text=Image+12" alt="Image 12">
+            </div>
+
+            <!-- Download link for Mod 4 -->
+            <a href="https://link-to-your-mod-4.com" target="_blank">Download Mod 4</a>
+        </div>
+
     </div>
 
     <footer>
@@ -144,22 +182,29 @@
 
     <script>
         // JavaScript for the image slideshow
-        let slideIndex = 0;
+        function showSlides(modId) {
+            let slideIndex = 0;
+            let slides = document.querySelectorAll(`#${modId} .slideshow-images`);
+            
+            function updateSlides() {
+                slides.forEach((slide, index) => {
+                    slide.style.display = (index === slideIndex) ? 'block' : 'none';
+                });
 
-        function showSlides() {
-            let slides = document.querySelectorAll('.slideshow-images');
-            slides.forEach((slide, index) => {
-                slide.style.display = (index === slideIndex) ? 'block' : 'none';
-            });
+                slideIndex++;
+                if (slideIndex >= slides.length) { slideIndex = 0; }
+                
+                setTimeout(updateSlides, 3000); // Change image every 3 seconds
+            }
 
-            slideIndex++;
-            if (slideIndex >= slides.length) { slideIndex = 0; }
-
-            setTimeout(showSlides, 3000); // Change image every 3 seconds
+            updateSlides();
         }
 
-        // Initialize slideshow
-        showSlides();
+        // Initialize slideshow for each mod
+        showSlides('mod1');
+        showSlides('mod2');
+        showSlides('mod3');
+        showSlides('mod4');
     </script>
 </body>
 
