@@ -73,6 +73,21 @@
             background-color: #45a049;
         }
 
+        /* Slideshow styles */
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+            height: 200px;
+            margin-bottom: 15px;
+        }
+
+        .slideshow-images {
+            display: none;
+            width: 100%;
+            height: 100%;
+        }
+
         footer {
             text-align: center;
             background-color: #333;
@@ -98,11 +113,27 @@
         <div class="download-item">
             <h3>Mod 1</h3>
             <p>Description for Mod 1</p>
+
+            <!-- Slideshow for Mod 1 -->
+            <div class="slideshow-container">
+                <img class="slideshow-images" src="https://via.placeholder.com/350x200?text=Image+1" alt="Image 1">
+                <img class="slideshow-images" src="https://via.placeholder.com/350x200?text=Image+2" alt="Image 2">
+                <img class="slideshow-images" src="https://via.placeholder.com/350x200?text=Image+3" alt="Image 3">
+            </div>
+
             <a href="#">Download</a>
         </div>
         <div class="download-item">
             <h3>Mod 2</h3>
             <p>Description for Mod 2</p>
+
+            <!-- Slideshow for Mod 2 -->
+            <div class="slideshow-container">
+                <img class="slideshow-images" src="https://via.placeholder.com/350x200?text=Image+4" alt="Image 4">
+                <img class="slideshow-images" src="https://via.placeholder.com/350x200?text=Image+5" alt="Image 5">
+                <img class="slideshow-images" src="https://via.placeholder.com/350x200?text=Image+6" alt="Image 6">
+            </div>
+
             <a href="#">Download</a>
         </div>
     </div>
@@ -110,6 +141,26 @@
     <footer>
         <p>&copy; 2024 EU Loggers. All rights reserved.</p>
     </footer>
+
+    <script>
+        // JavaScript for the image slideshow
+        let slideIndex = 0;
+
+        function showSlides() {
+            let slides = document.querySelectorAll('.slideshow-images');
+            slides.forEach((slide, index) => {
+                slide.style.display = (index === slideIndex) ? 'block' : 'none';
+            });
+
+            slideIndex++;
+            if (slideIndex >= slides.length) { slideIndex = 0; }
+
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+
+        // Initialize slideshow
+        showSlides();
+    </script>
 </body>
 
 </html>
